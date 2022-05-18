@@ -54,7 +54,7 @@ User1 = new Usuario(
     "FEDERICO",
     "ROSALES",
     [
-        { nombre: "Tierra de nadie", autor: "Ignacio Montes de Oca" },
+        { nombre: "Tierra de Nadie", autor: "Ignacio Montes de Oca" },
         { nombre: "Malvinas a Sangre y Fuego", autor: "Nicolas Kasanzew" },
         
     ],

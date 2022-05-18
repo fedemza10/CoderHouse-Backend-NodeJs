@@ -1,4 +1,4 @@
-//Clase Usuario
+
 
 class Usuario {
     constructor( nombre, apellido, libros = [{}], mascotas = []) {
@@ -37,7 +37,7 @@ class Usuario {
         })
     }
 
-    //metodo que devuelve todos los libros (para verificar que se agreguen correctamente)
+    //metodo que retorna todos los libros
     getBooks() {
         return this.libros;
     }

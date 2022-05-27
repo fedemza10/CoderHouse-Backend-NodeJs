@@ -20,7 +20,7 @@ class Contenedor {
                          .then (console.log (`id : ${producto.id}`))
                          .catch (err => (console.log (err)))
                          
-                 }
+                    }
                  )
 
         
@@ -29,8 +29,8 @@ class Contenedor {
     getById(iD) {
             fs.promises.readFile(this.path, 'utf-8',)
                 .then((contenido) => {
-                    const products = JSON.parse(contenido)
-                    const findP = products.find(prod => prod.id === iD);
+                    const productos = JSON.parse(contenido)
+                    const findP = productos.find(prod => prod.id === iD);
                    
                     if (findP == undefined) {
                         console.log("No hay producto con esa ID");
@@ -48,7 +48,7 @@ class Contenedor {
         
         fs.promises.readFile(this.path, 'utf-8',)
             .then((contenido) => {
-                products = JSON.parse(contenido)
+                productos = JSON.parse(contenido)
                 console.log("Productos ", list)
             })
             .catch((error) => {
@@ -67,7 +67,7 @@ class Contenedor {
                 const removeP = productos.splice(getId, 1);
                 console.log("Producto eliminado ", removeP);
                 fs.promises.writeFile(this.path, JSON.stringify(productos),)
-                    .then(() => { products.getAll() })
+                    .then(() => { productos.getAll() })
                     .catch((error) => { console.log("Error de grabacion en products.txt ", error) })
                 } else {
                     console.log("No hay un producto con id ", findId);
@@ -96,7 +96,7 @@ const prod1 =    {
     "thumbnail": ' https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.eukanuba.com%2Fmx%2Fall-products%2Feukanuba-puppy-large-breed&psig=AOvVaw2LVfZA-PB-zYqMcC-VfAn8&ust=1653650569364000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMDpsciG_fcCFQAAAAAdAAAAABAE'
 }
   
-  const p3 =   {
+  const prod3 =   {
     "title": "vital can",   
     "price": 6000,
     "thumbnail": 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vitalcan.com%2Fmarcas-para-perros%2Fbalanced-perros%2F&psig=AOvVaw3keCmEMGHNqrvijHHO_v1X&ust=1653650521263000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJCj47OG_fcCFQAAAAAdAAAAABAD'
@@ -117,7 +117,7 @@ const contenedorP= new Contenedor ('./products.txt', 'utf-8',)
            console.log ( 'Obteniendo por id: ', prodBid)
 
 // Obteniendo todos los productos
-     const products = contenedorP.getAll()
+     const products = contenedorP.getAll(prod1, prod2, prod3)
            console.log( 'Obteniendo todos los productos: ' , products)
 
 // Borrando por ID

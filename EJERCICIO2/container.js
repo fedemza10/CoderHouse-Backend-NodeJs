@@ -61,12 +61,12 @@ class Contenedor {
      deleteById(findId) {
         fs.promises.readFile(this.path, 'utf-8',)
             .then((contenido) => {
-                const products = JSON.parse(contenido)
-                const getId = products.find(x => x.id === findId);
+                const productos = JSON.parse(contenido)
+                const getId = productos.find(x => x.id === findId);
                 if(getId == id ){
-                const removeP = products.splice(getId, 1);
+                const removeP = productos.splice(getId, 1);
                 console.log("Producto eliminado ", removeP);
-                fs.promises.writeFile(this.path, JSON.stringify(products),)
+                fs.promises.writeFile(this.path, JSON.stringify(productos),)
                     .then(() => { products.getAll() })
                     .catch((error) => { console.log("Error de grabacion en products.txt ", error) })
                 } else {

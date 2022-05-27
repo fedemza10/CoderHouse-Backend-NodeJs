@@ -2,18 +2,18 @@
 const fs = require('fs');
 
 class Contenedor {
-    constructor( path) {
+    constructor( products) {
         
-        this.path = path;
+        this.path = `${products}.txt`;
         
     }
 
     save(product) {
        
-            fs.promises.readFile ('./products.txt', 'utf-8',)
+            fs.promises.readFile (this.path, 'utf-8',)
                  .then (contenido => {
                      const data = JSON.parse(contenido);
-                     const lItem = data[data.lenght -1].id + 1;
+                     const lItem = data[data.length -1].id + 1;
                      product.id = lItem;
                      data.push (product);
                      fs.promises.writeFile (this.path, JSON.stringify (data))
@@ -27,7 +27,7 @@ class Contenedor {
     }
     
     getById(iD) {
-            fs.promises.readFile('./products.txt', 'utf-8',)
+            fs.promises.readFile(this.path, 'utf-8',)
                 .then((contenido) => {
                     const products = JSON.parse(contenido)
                     const findP = products.find(prod => prod.id === iD);
@@ -46,7 +46,7 @@ class Contenedor {
      
     getAll(list) {
         
-        fs.promises.readFile('./products.txt', 'utf-8',)
+        fs.promises.readFile(this.path, 'utf-8',)
             .then((contenido) => {
                 products = JSON.parse(contenido)
                 console.log("Productos ", list)
@@ -59,14 +59,14 @@ class Contenedor {
         
 
      deleteById(findId) {
-        fs.promises.readFile('./products.txt', 'utf-8',)
+        fs.promises.readFile(this.path, 'utf-8',)
             .then((contenido) => {
                 const products = JSON.parse(contenido)
                 const getId = products.find(x => x.id === findId);
                 if(getId == id ){
                 const removeP = products.splice(getId, 1);
                 console.log("Producto eliminado ", removeP);
-                fs.promises.writeFile('./products.txt', JSON.stringify(products),)
+                fs.promises.writeFile(this.path, JSON.stringify(products),)
                     .then(() => { products.getAll() })
                     .catch((error) => { console.log("Error de grabacion en products.txt ", error) })
                 } else {
@@ -80,7 +80,7 @@ class Contenedor {
 
     deleteAll() {
        
-        fs.promises.writeFile('./products.txt', '');
+        fs.promises.writeFile(this.path, '');
     }
 
 }
@@ -114,19 +114,19 @@ const contenedorP= new Contenedor ('./products.txt', 'utf-8',)
 
 // Obteniendo por ID
     const prodBid = contenedorP.getById (prod1)
-           console.log (prodBid)
+           console.log ( 'Obteniendo por id: ', prodBid)
 
 // Obteniendo todos los productos
      const products = contenedorP.getAll()
-           console.log(products)
+           console.log( 'Obteniendo todos los productos: ' , products)
 
 // Borrando por ID
        const prodDeleteId = contenedorP.deleteById(1)
-             console.log (prodDeleteId)
+             console.log ( 'Borrando por id: ', prodDeleteId)
 
 // Borrando todo
         const deleteA = contenedorP.deleteAll()
-              console.log(deleteA)
+              console.log('Borrando todo : ', deleteA)
 
 }
 prueba ()

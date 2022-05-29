@@ -37,18 +37,26 @@ async function pruebaSave () {
 }  
           
    
-
+// Guardando productos y asignando id.
 pruebaSave();
 
 
 // Trayendo todo mediante getAll.
 
-async function pruebaGetAll (){
-    let data= await products.getAll()
-    console.log (data);
+//async function pruebaGetAll (){
+//    let data= await products.getAll()
+//    console.log (data);
 
-}
-pruebaGetAll();
+//}
+//pruebaGetAll();
+
+// Trayendo solo un producto por getById.
+
+//async function getById(){
+//let prod = await products.getById(1)
+//console.log(prod);
+//}
+//getById()
 
 
 // Eliminando productos por ID.

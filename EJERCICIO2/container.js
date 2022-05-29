@@ -56,7 +56,7 @@ class Contenedor {
    async getAll() {
         
     try {
-        const data = await fs.promises.readFile(this.path, 'utf-8');
+        const response = await fs.promises.readFile(this.path, 'utf-8');
         if (response) {
           let data = JSON.parse(response);
           return data

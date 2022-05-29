@@ -59,8 +59,10 @@ class Contenedor {
         const data = await fs.promises.readFile(this.path, 'utf-8');
         if (response) {
           let data = JSON.parse(response);
-          return data;
+          return data
+          
         }
+        
       } catch (error) {
        console.log (error);
       }

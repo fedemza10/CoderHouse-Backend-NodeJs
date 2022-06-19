@@ -1,6 +1,6 @@
 
 
-class Usuario {
+/* class Usuario {
     constructor( nombre, apellido, libros = [{}], mascotas = []) {
         
         this.nombre = nombre,
@@ -83,3 +83,5 @@ console.log(User1.getMascotas());
 //contando elementos en el array de mascotas mediante countMascotas()
 console.log(User1.countMascotas());
 console.log (User1)
+
+ */

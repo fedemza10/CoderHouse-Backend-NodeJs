@@ -1,24 +1,49 @@
 {
+  
   "name": "backend-coderhouse",
+  
   "version": "1.0.0",
+  
   "description": "<h1></h1>",
+  
   "main": "excercise.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1"
+  
   },
+  
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fedemza10/CoderHouse-Backend-NodeJs.git"
+  
+    
+  "type": "git",
+  
+    
+  "url": "git+https://github.com/fedemza10/CoderHouse-Backend-NodeJs.git"
+  
   },
+  
   "keywords": [],
+  
   "author": "",
+  
   "license": "ISC",
+  
   "bugs": {
-    "url": "https://github.com/fedemza10/CoderHouse-Backend-NodeJs/issues"
+  
+    
+  "url": "https://github.com/fedemza10/CoderHouse-Backend-NodeJs/issues"
+  
   },
+  
   "homepage": "https://github.com/fedemza10/CoderHouse-Backend-NodeJs#readme",
+  
   "dependencies": {
-    "express": "^4.18.1"
-  },
-  "devDependencies": {}
+  
+    
+  "express": "^4.18.1"
+  
+  }
 }

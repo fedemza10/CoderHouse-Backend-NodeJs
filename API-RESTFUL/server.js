@@ -72,10 +72,11 @@ router.put('/:id', validarId, (req, res) => {
 })
 
 //DELETE
-router.delete('/:id', validarId, (req, res) => {
-    productos = productos.filter(p => p.id != req.params.id);
-    res.sendStatus(200)
-})
+router.delete("/:id", validarId, (req, res) => {
+    let id = parseInt(req.params.id);
+    api.delete(id);
+    res.sendStatus(200);
+  })
 
 const server = app.listen(PORT, () => {
     console.log(`Escuchando en el puerto ${server.address().port}`)

@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/productos", productRouter);
 
 app.get("/", (req, res) => {
-  res.render("form");
+  res.render("index");
 });
 
 

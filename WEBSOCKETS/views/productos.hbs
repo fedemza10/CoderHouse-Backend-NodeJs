@@ -1,0 +1,46 @@
+<!--BOOTSTRAP-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<body>
+    <center>
+      <div>
+         <h1>  </h1>
+      
+             <h3>Lista de productos</h3>
+
+                
+                  {{#if productos.length}}
+                    {{#each productos}}
+                      <div className='col-md-4' >
+
+                           <div className="card w-125 mt-5 border-success" >
+                              <div className="card-header mt-5">
+                                  {{this.title }}
+                                </div>
+
+                               <div className="card-body mt-3">
+                                 
+                                 <img src= {{this.thumbnail}}  alt='img' className='w-80' />                                                         
+                                  </div>
+                               <div className="card-footer mt-3 mb-5">      
+                                    {{this.price}}
+                                  </div>  
+                           </div>
+                      </div>
+                    
+                      {{/each}}
+                      {{else}}
+                       <div class="alert alert-warning" role="alert">
+                            No hay productos para mostrar
+                            </div>
+                   {{/if}} 
+        
+
+             <a href="/"><button type="button" class=" btn btn-outline-primary mt-5 mb-5"> 
+                               Volver al formulario de carga</button>
+                </a>
+
+   </div> 
+</center>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>

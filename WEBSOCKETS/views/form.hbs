@@ -3,6 +3,7 @@
      
      <!--BOOTSTRAP-->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <link rel="stylesheet" href="/WEBSOCKETS/public/style/style.css">
      <body >
         
      
@@ -23,6 +24,24 @@
         </div>       
        
          <a href="/productos"><button  class="btn btn-outline-warning mt-5 ms-5">Ver Productos</button></a>
+
+         <section class="mt-4">
+            <h2>Centro de mensajes</h2>
+            <div class="mb-3">
+                <label for="email" class="form-label">email</label>
+                <input required type="email" name="email" class="form-control" id="email">
+            </div>
+            <hr>
+            <div id="messages">
+
+            </div>
+            <form onsubmit="return sendMessage(this)"> 
+                <div class="mb-3 d-flex">
+                    <input placeholder="Tu mensaje..." required type="text" name="text" class="w-25 form-control" id="text">
+                    <button type="submit" class="ms-2 btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </section>
     </center>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
